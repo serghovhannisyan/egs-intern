@@ -26,12 +26,13 @@ public class UserDataHandler {
         catch (IOException e) {
             System.out.println(e);
         }*/
-        if(userStorage.exists() && (userStorage.length()>0))
+        if(userStorage.exists() && (userStorage.length()>0)) {
             getUsersFromFile(userStorage);
-        CommandListener();
+        }
+        commandListener();
      }
 
-    private void CommandListener() throws IOException {
+    private void commandListener() throws IOException {
         System.out.println("Please specify one of the commands: ADD, REMOVE, LIST or EXIT!");
         String line;
         try(BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));) {
