@@ -1,4 +1,8 @@
 package com.egs.serg;
 
-public class Main {
+public class MyApp {
+
+    public void init() {
+        // starting point
+    }
 }
