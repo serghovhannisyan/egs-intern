@@ -4,5 +4,6 @@ public class MyApp {
 
     public void init() {
         // starting point
+        System.out.println("it works");
     }
 }

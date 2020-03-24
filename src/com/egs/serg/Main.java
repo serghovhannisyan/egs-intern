@@ -1,6 +1,6 @@
 package com.egs.serg;
 
-import com.egs.serg.task1.MyApp;
+import com.egs.serg.task2.MyApp;
 
 public class Main {
 
