@@ -6,28 +6,28 @@ import java.util.Scanner;
 
 public class ReadFromFileIntoArrayList {
 
-    private static ArrayList<User> users = new ArrayList<>();
-    private static final File FILE_PATH = new File("arsen-sargsyan-resources/fileArrayList");
+    private ArrayList<User> users = new ArrayList<>();
+    private File file;
 
-    public static void main(String[] args) {
-       new ReadFromFileIntoArrayList().go();
+    public ReadFromFileIntoArrayList(File file) {
+        this.file = file;
+    }
+
+    public ReadFromFileIntoArrayList(String filePath) {
+        file = new File(filePath);
     }
 
     public void go() {
         try {
             readFile();
-        } catch (Exception e) {
-            System.out.println("Error during read");
-        }
-        try {
             writeFile();
-        } catch (IOException e) {
-            System.out.println("Error during  write  or console ");
+        } catch (Exception e) {
+            System.out.println("Error during read/write: " + e.getMessage());
         }
     }
 
-    private static void readFile() throws IOException, ClassNotFoundException {
-        try (BufferedReader bRid = new BufferedReader(new FileReader(FILE_PATH))) {
+    private void readFile() throws IOException, ClassNotFoundException {
+        try (BufferedReader bRid = new BufferedReader(new FileReader(file))) {
             String str;
             while ((str = bRid.readLine()) != null) {
                 String[] userNameAndAge = str.split(" ");
@@ -36,7 +36,7 @@ public class ReadFromFileIntoArrayList {
         }
     }
 
-    private static void writeFile() throws IOException {
+    private void writeFile() throws IOException {
         System.out.println("\nselect <command(ADD,REMOVE,LIST or EXIT)\n" +
                 "for <add> select :ADD space age: \n" +
                 "for <remove> select :REMOVE space Index(n): \n" +
@@ -81,8 +81,8 @@ public class ReadFromFileIntoArrayList {
                     break;
                 }
                 case "CLEAR": {
-                    users = new ArrayList<>();
-                    FILE_PATH.delete();
+                    users.clear();
+                    file.delete();
                     System.out.println("users list has be clear");
                     break;
 
@@ -98,7 +98,7 @@ public class ReadFromFileIntoArrayList {
 
             }
             if (line.equalsIgnoreCase("EXIT")) {
-                try (BufferedWriter bWrit = new BufferedWriter(new FileWriter(FILE_PATH))) {
+                try (BufferedWriter bWrit = new BufferedWriter(new FileWriter(file))) {
                     for (User user : users) {
                         bWrit.write(user.getName() + " " + user.getEge() + "\n");
                     }
