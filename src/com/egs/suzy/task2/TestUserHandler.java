@@ -3,6 +3,6 @@ import java.io.IOException;
 
 public class TestUserHandler {
     public static void main(String[] args) throws IOException {
-        new UserDataHandler();
+        new UserDataHandler().commandListener();
     }
 }

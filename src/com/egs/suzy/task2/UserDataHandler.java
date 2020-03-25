@@ -20,7 +20,6 @@ public class UserDataHandler {
         if (userStorage.exists() && (userStorage.length() > 0)) {
             getUsersFromFile(userStorage);
         }
-        commandListener();
     }
 
     private static boolean isUsernameUnique(String username) {
@@ -73,7 +72,7 @@ public class UserDataHandler {
         }
     }
 
-    private void commandListener() throws IOException {
+    public void commandListener() throws IOException {
         System.out.println("Please specify one of the commands: ADD, REMOVE, LIST or EXIT!");
         String line;
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
@@ -98,10 +97,10 @@ public class UserDataHandler {
                         counter = 0;
                         System.out.println("Add age");
                         boolean valid = false;
-                        while(!valid && counter<MAX_INCORRECT_INPUT) {
+                        while (!valid && counter < MAX_INCORRECT_INPUT) {
                             try {
                                 inputAge = Integer.parseInt(reader.readLine());
-                                  while(!isValidAge(inputAge) && counter<MAX_INCORRECT_INPUT) {
+                                while (!isValidAge(inputAge) && counter < MAX_INCORRECT_INPUT) {
                                     System.out.println("Not valid age!");
                                     counter++;
                                 }
@@ -112,7 +111,7 @@ public class UserDataHandler {
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
-                            if(counter > MAX_INCORRECT_INPUT){
+                            if (counter > MAX_INCORRECT_INPUT) {
                                 System.out.println("Too many incorrect outputs. Restart!");
                             }
                         }
