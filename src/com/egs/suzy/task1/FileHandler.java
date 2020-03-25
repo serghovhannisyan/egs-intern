@@ -19,7 +19,7 @@ public class FileHandler {
               count = 0;
               lineNum++;
               line = reader.readLine();
-            };
+            }
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
