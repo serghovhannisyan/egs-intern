@@ -1,3 +1,4 @@
+package com.egs.suzy.task2;
 import java.io.IOException;
 
 public class TestUserHandler {
