@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="78f70769-0fc8-434f-b87f-464a7e3e2dfb" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="serg/task2" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\sergeyh\Downloads\egs-intern\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZaA71iP2XIxhg0oQb8Z8XBlIvj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sergeyh\Downloads\egs-intern" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.egs.serg.Main" />
+      <module name="egs-intern" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="78f70769-0fc8-434f-b87f-464a7e3e2dfb" name="Default Changelist" comment="" />
+      <created>1585066659211</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585066659211</updated>
+      <workItem from="1585066662560" duration="3302000" />
+      <workItem from="1585135325469" duration="10875000" />
+    </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <created>1585067319631</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585067319631</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Second commit">
+      <created>1585067498274</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585067498274</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Restructure">
+      <created>1585067619658</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1585067619658</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Restructure">
+      <created>1585068811153</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585068811153</updated>
+    </task>
+    <task id="LOCAL-00005" summary="linkedlist impl">
+      <created>1585159785759</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1585159785759</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <MESSAGE value="Second commit" />
+    <MESSAGE value="Restructure" />
+    <MESSAGE value="linkedlist impl" />
+    <option name="LAST_COMMIT_MESSAGE" value="linkedlist impl" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1780" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585143521841">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1780" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585143521841" />
+    <state x="2131" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1585145075817">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2131" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585145075817" />
+    <state x="1951" y="113" key="CommitChangelistDialog2" timestamp="1585159872670">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1951" y="113" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585159872670" />
+    <state x="2105" y="261" key="FileChooserDialogImpl" timestamp="1585143258560">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2105" y="261" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585143258560" />
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom" timestamp="1585145540761">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585145540761" />
+    <state width="1877" height="274" key="GridCell.Tab.0.center" timestamp="1585145540760">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="274" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585145540760" />
+    <state width="1877" height="274" key="GridCell.Tab.0.left" timestamp="1585145540760">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="274" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585145540760" />
+    <state width="1877" height="274" key="GridCell.Tab.0.right" timestamp="1585145540761">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="274" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585145540761" />
+    <state x="1991" y="218" key="NewModule_or_Project.wizard" timestamp="1585143311119">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1991" y="218" key="NewModule_or_Project.wizard/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585143311119" />
+    <state x="1918" y="252" key="Vcs.Push.Dialog.v2" timestamp="1585159791480">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1918" y="252" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585159791480" />
+    <state x="1915" y="312" key="com.intellij.ide.util.TipDialog" timestamp="1585135335404">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1915" y="312" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585135335404" />
+    <state x="547" y="305" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585119406997">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="2135" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585069152500" />
+    <state x="547" y="305" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1585119406997" />
+  </component>
+</project>
