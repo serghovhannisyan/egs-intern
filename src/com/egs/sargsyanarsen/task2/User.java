@@ -3,12 +3,12 @@ package com.egs.sargsyanarsen.task2;
 public class User {
 
     private String name;
-    private int ege;
+    private int age;
     private int id;
 
-    public User(String name, int ege,int id) {
+    public User(int id, String name,int age) {
         this.name = name;
-        this.ege = ege;
+        this.age = age;
         this.id = id;
     }
 
@@ -16,8 +16,8 @@ public class User {
         return name;
     }
 
-    public int getEge() {
-        return ege;
+    public int getAge() {
+        return age;
     }
     public int getId() {
         return id;
@@ -27,7 +27,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
-                ", ege=" + ege +
+                ", ege=" + age +
                 ", id=" + id +
                 '}';
     }

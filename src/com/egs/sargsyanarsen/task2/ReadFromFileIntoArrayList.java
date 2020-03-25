@@ -38,13 +38,13 @@ public class ReadFromFileIntoArrayList {
                 int age;
                 int id;
                 try {
-                    age = Integer.parseInt(userNameAndAge[1]);
-                    id = Integer.parseInt(userNameAndAge[2]);
-                }catch (NumberFormatException e){
+                    age = Integer.parseInt(userNameAndAge[2]);
+                    id = Integer.parseInt(userNameAndAge[0]);
+                } catch (NumberFormatException e) {
                     System.out.println("age or id parse exception");
                     return;
                 }
-                users.add(new User(userNameAndAge[0], age, id));
+                users.add(new User(id, userNameAndAge[1], age));
             }
         }
     }
@@ -59,66 +59,81 @@ public class ReadFromFileIntoArrayList {
             System.out.println("\nInput command");
             line = scanner.nextLine();
             array = line.split(" ");
+            int length = array.length;
             command = Command.valueOf(array[0].toUpperCase());
             switch (command) {
                 case ADD: {
-                    int age;
-                    int id;
-                    try {
-                        age = Integer.parseInt(array[2]);
-                        id = Integer.parseInt(array[3]);
-                    } catch (NumberFormatException e) {
-                        System.out.println("age or id pars exceptions");
-                        break;
-                    }
-                    for (User user : users) {
-                        if (user.getId() == id) {
-                            System.out.println("with this id already exists user");
-                            writeFile();
+                    if (length == 4) {
+                        int age;
+                        int id;
+                        try {
+                            age = Integer.parseInt(array[3]);
+                            id = Integer.parseInt(array[1]);
+                        } catch (NumberFormatException e) {
+                            System.out.println("age or id pars exceptions");
+                            break;
                         }
-                    }
-                    users.add(new User(array[1], age, id));
-                    System.out.println("user added");
+                        for (User user : users) {
+                            if (user.getId() == id) {
+                                System.out.println("with this id already exists user");
+                                writeFile();
+                            }
+                        }
+                        users.add(new User(id, array[2], age));
+                        System.out.println("user added");
+                    } else
+                        System.out.println("wrong command");
                     break;
                 }
                 case REMOVE: {
-                    int index;
-                    try {
-                        index = Integer.parseInt(array[1]);
-                    }catch (NumberFormatException e) {
-                        System.out.println("index pars exceptions");
-                        break;
+                    if (length == 2) {
+                        int index;
+                        try {
+                            index = Integer.parseInt(array[1]);
+                        } catch (NumberFormatException e) {
+                            System.out.println("index pars exceptions");
+                            break;
+                        }
+                        if (users.size() < index) {
+                            System.out.println("Index can not be small array.length");
+                            break;
+                        }
+                        users.remove(index);
+                        System.out.println("user removed");
                     }
-                    if (users.size() < index) {
-                        System.out.println("Index can not be small array.length");
-                        break;
-                    }
-                    users.remove(index);
-                    System.out.println("user removed");
+                    System.out.println("wrong command");
                     break;
                 }
                 case LIST: {
-                    for (User user : users) {
-                        System.out.println(String.format("%s %d %d", user.getName(), user.getEge(), user.getId()));
-                    }
+                    if (length == 1) {
+                        for (User user : users) {
+                            System.out.println(String.format("%d %s %d", user.getId(),user.getName(), user.getAge()));
+                        }
+                    } else System.out.println("wrong command");
                     break;
                 }
                 case HELP: {
-                    System.out.println(Constants.WELCOME_LOG_MESSAGE);
+                    if (length == 1) {
+                        System.out.println(Constants.WELCOME_LOG_MESSAGE);
+                    }else System.out.println("wrong command");
                     break;
                 }
                 case CLEAR: {
-                    users.clear();
-                    file.delete();
-                    System.out.println("users list has be clear");
+                    if (length == 1) {
+                        users.clear();
+                        file.delete();
+                        System.out.println("users list has be clear");
+                    }else System.out.println("wrong command");
                     break;
                 }
                 case EXIT: {
-                    try (BufferedWriter bWrit = new BufferedWriter(new FileWriter(file))) {
-                        for (User user : users) {
-                            bWrit.write(String.format("%s %d %d\n", user.getName(), user.getEge(), user.getId()));
+                    if (length == 1) {
+                        try (BufferedWriter bWrit = new BufferedWriter(new FileWriter(file))) {
+                            for (User user : users) {
+                                bWrit.write(String.format("%d %s %d\n", user.getId(), user.getName(), user.getAge()));
+                            }
                         }
-                    }
+                    }else System.out.println("wrong command");
                     break;
                 }
                 default: {
