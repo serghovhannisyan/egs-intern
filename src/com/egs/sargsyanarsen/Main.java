@@ -1,4 +1,6 @@
-import task2.ReadFromFileIntoArrayList;
+package com.egs.sargsyanarsen;
+
+import com.egs.sargsyanarsen.task2.ReadFromFileIntoArrayList;
 
 import java.io.File;
 
