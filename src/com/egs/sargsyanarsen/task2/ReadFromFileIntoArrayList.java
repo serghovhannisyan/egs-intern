@@ -20,17 +20,17 @@ public class ReadFromFileIntoArrayList {
     public void go() {
         try {
             readFile();
+            writeFile();
         } catch (Exception e) {
             System.out.println("Error during read/write: " + e.getMessage());
-        }
-        try {
-            writeFile();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
     private void readFile() throws IOException, ClassNotFoundException {
+        if (!file.exists()) {
+            boolean created = file.createNewFile();
+            System.out.println(String.format("file created: %s at path: %s", created, file.getAbsoluteFile()));
+        }
         try (BufferedReader bRid = new BufferedReader(new FileReader(file))) {
             String str;
             while ((str = bRid.readLine()) != null) {
@@ -41,7 +41,7 @@ public class ReadFromFileIntoArrayList {
                     age = Integer.parseInt(userNameAndAge[2]);
                     id = Integer.parseInt(userNameAndAge[0]);
                 } catch (NumberFormatException e) {
-                    System.out.println("age or id parse exception");
+                    System.out.println("User has not added: age or id parse exception: " + e.getMessage());
                     return;
                 }
                 users.add(new User(id, userNameAndAge[1], age));
@@ -70,7 +70,7 @@ public class ReadFromFileIntoArrayList {
                             age = Integer.parseInt(array[3]);
                             id = Integer.parseInt(array[1]);
                         } catch (NumberFormatException e) {
-                            System.out.println("age or id pars exceptions");
+                            System.out.println("age or id pars exceptions" + e.getMessage());
                             break;
                         }
                         for (User user : users) {
@@ -91,7 +91,7 @@ public class ReadFromFileIntoArrayList {
                         try {
                             index = Integer.parseInt(array[1]);
                         } catch (NumberFormatException e) {
-                            System.out.println("index pars exceptions");
+                            System.out.println("index pars exceptions" + e.getMessage());
                             break;
                         }
                         if (users.size() < index) {
@@ -100,6 +100,7 @@ public class ReadFromFileIntoArrayList {
                         }
                         users.remove(index);
                         System.out.println("user removed");
+                        break;
                     }
                     System.out.println("wrong command");
                     break;
@@ -107,7 +108,7 @@ public class ReadFromFileIntoArrayList {
                 case LIST: {
                     if (length == 1) {
                         for (User user : users) {
-                            System.out.println(String.format("%d %s %d", user.getId(),user.getName(), user.getAge()));
+                            System.out.println(String.format("%d %s %d", user.getId(), user.getName(), user.getAge()));
                         }
                     } else System.out.println("wrong command");
                     break;
@@ -115,7 +116,7 @@ public class ReadFromFileIntoArrayList {
                 case HELP: {
                     if (length == 1) {
                         System.out.println(Constants.WELCOME_LOG_MESSAGE);
-                    }else System.out.println("wrong command");
+                    } else System.out.println("wrong command");
                     break;
                 }
                 case CLEAR: {
@@ -123,7 +124,7 @@ public class ReadFromFileIntoArrayList {
                         users.clear();
                         file.delete();
                         System.out.println("users list has be clear");
-                    }else System.out.println("wrong command");
+                    } else System.out.println("wrong command");
                     break;
                 }
                 case EXIT: {
@@ -133,7 +134,7 @@ public class ReadFromFileIntoArrayList {
                                 bWrit.write(String.format("%d %s %d\n", user.getId(), user.getName(), user.getAge()));
                             }
                         }
-                    }else System.out.println("wrong command");
+                    } else System.out.println("wrong command");
                     break;
                 }
                 default: {

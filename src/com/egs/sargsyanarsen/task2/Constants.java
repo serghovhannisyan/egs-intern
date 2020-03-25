@@ -2,7 +2,8 @@ package com.egs.sargsyanarsen.task2;
 
 public final class Constants {
 
-    private Constants() { }
+    private Constants() {
+    }
 
     public static String WELCOME_LOG_MESSAGE = "\nselect <command(ADD,REMOVE,LIST or EXIT)\n" +
             "for <add> select :ADD space id space name space age: \n" +

@@ -6,7 +6,7 @@ public class User {
     private int age;
     private int id;
 
-    public User(int id, String name,int age) {
+    public User(int id, String name, int age) {
         this.name = name;
         this.age = age;
         this.id = id;
@@ -19,6 +19,7 @@ public class User {
     public int getAge() {
         return age;
     }
+
     public int getId() {
         return id;
     }
