@@ -1,4 +1,6 @@
-import task1.ReadHello;
+package com.egs.arsensargsyan;
+
+import com.egs.arsensargsyan.task1.ReadHello;
 
 public class Main {
 

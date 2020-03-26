@@ -1,4 +1,4 @@
-package task1;
+package com.egs.arsensargsyan.task1;
 
 import java.io.*;
 import java.util.HashMap;
@@ -6,14 +6,10 @@ import java.util.Map;
 
 public class ReadHello {
 
-    private static final String PATH_FILE = "arsen-sargsyan-resources/readFile";
-    private static final String RESULT_FILE = "arsen-sargsyan-resources/result";
+    private static final String PATH_FILE = "src/com/egs/arsensargsyan/task1/readFile";
+    private static final String RESULT_FILE = "src/com/egs/arsensargsyan/task1/result";
 
     private Map<Integer, Integer> resultMap = new HashMap<>();
-
-    public static void main(String[] args) {
-        new ReadHello().go();
-    }
 
     public void go() {
         try {
