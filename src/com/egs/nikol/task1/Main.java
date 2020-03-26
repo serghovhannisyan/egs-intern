@@ -2,7 +2,6 @@ package com.egs.nikol.task1;
 
 import java.io.*;
 import java.net.URISyntaxException;
-import java.net.URL;
 
 public class Main {
     public static void main(String[] args) {
