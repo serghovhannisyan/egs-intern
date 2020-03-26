@@ -1,4 +1,4 @@
-package EGS.UserManagement;
+package egs.UserManagement;
 
 import java.io.Serializable;
 

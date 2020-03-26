@@ -1,6 +1,4 @@
-package EGS.UserManagement;
-
-import EGS.UserManagement.UserManagement;
+package egs.UserManagement;
 
 import java.io.File;
 import java.io.IOException;
@@ -106,8 +104,7 @@ public class UI {
                     try {
                         int id = scanner.nextInt();
                         parameters = String.valueOf(id);
-                    }
-                    catch (InputMismatchException ex) {
+                    } catch (InputMismatchException ex) {
                         System.out.println("Invalid argument");
                     }
                     break;
@@ -155,9 +152,7 @@ public class UI {
                 case EXIT: {
                     try {
                         users.serializeUsersToFile(new File("out.dat"));
-                    }
-                    catch(IOException ex)
-                    {
+                    } catch (IOException ex) {
                         System.out.println(ex.getMessage());
                     }
                     System.exit(0);
