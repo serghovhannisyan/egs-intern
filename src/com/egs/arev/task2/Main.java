@@ -2,10 +2,11 @@ package com.egs.arev.task2;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
-    private static String PATH = "users.txt";
+    private static String PATH = "src\\com\\egs\\arev\\task2\\users.txt";
     private static ArrayList<User> users = new ArrayList<User>();
 
     public static void main(String[] args) {
@@ -14,7 +15,8 @@ public class Main {
     }
 
     public static void readFromFile(String path) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(path)))
+        {
             String result = "";
             String line = reader.readLine();
             while (line != null) {
@@ -28,9 +30,7 @@ public class Main {
                 String username = (item.split(" "))[0];
                 User u = new User(username, Integer.parseInt(age));
                 users.add(u);
-
             }
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -45,57 +45,56 @@ public class Main {
                 "for showing all users:LIST\n" +
                 "for removing:REMOVE username age\n" +
                 "for exiting and saving changes:EXIT\n"
-
         );
         Scanner sc = new Scanner(System.in);
-        String[] checkArray = {""};
+        String[] inputLine = {""};
         String line;
-        while (!checkArray[0].equals("EXIT")) {
+        while (!inputLine[0].equals("EXIT")) {
             line = sc.nextLine();
-            checkArray = line.split(" ");
-            switch (checkArray[0].toUpperCase()) {
+            inputLine = line.split(" ");
+            switch (inputLine[0].toUpperCase()) {
                 case "ADD": {
-                    if (check(checkArray))
+                    if (checkInput(inputLine))
                         System.out.println("Wrong input.Please read again requirments.");
                     else {
                         int count = 0;
                         for (User u : users) {
-                            if (u.getAge() == Integer.parseInt(checkArray[2]) && (u.getUsername()).equals(checkArray[1]))
+                            if (u.getAge() == Integer.parseInt(inputLine[2]) && (u.getUsername()).equals(inputLine[1]))
                                 count++;
                         }
                         if (count == 0) {
-                            users.add(new User(checkArray[1], Integer.parseInt(checkArray[2])));
+                            users.add(new User(inputLine[1], Integer.parseInt(inputLine[2])));
                             System.out.println("You add user succesfully!Please use LIST command to see all users.");
                         } else
                             System.out.println("This user already exists in the list.Please try add other user.");
                     }
                     break;
-
-
                 }
+
                 case "LIST": {
                     for (User u : users) {
                         System.out.println(u);
-
-                   "Arev".charAt(0);
-
                     }
                     break;
                 }
+
                 case "REMOVE": {
-                    if (check(checkArray))
+                    Iterator<User> iter = users.iterator();
+                    int count = 0;
+                    if (checkInput(inputLine)) {
                         System.out.println("Wrong input.Please read again requirments.");
-                    else
-                        for (User u : users) {
-                            if (u.getUsername().equals(checkArray[1]) && u.getAge() == Integer.parseInt(checkArray[2])) {
-                                users.remove(u);
+                    } else {
+                        while (iter.hasNext()) {
+                            User u = iter.next();
+                            if (u.getUsername().equals(inputLine[1]) && u.getAge() == Integer.parseInt(inputLine[2])) {
+                                iter.remove();
+                                count++;
                                 System.out.println("You have removed the user ! Please use LIST command to see all users.");
-                                break;
-                            } else
-                                System.out.println("This user does not exist in the list.Please try again!");
-                            break;
+                            }
                         }
-                    break;
+                        if (count == 0)
+                            System.out.println("This user does not exist in the list.Please try again!");
+                    }
                 }
                 case "EXIT": {
                     try (BufferedWriter writer = new BufferedWriter(new FileWriter(PATH, false))) {
@@ -110,12 +109,9 @@ public class Main {
 
                 default: {
                     System.out.println("Please enter the correct command!");
-
                 }
             }
-
         }
-
     }
 
     public static boolean isInteger(String input) {
@@ -127,7 +123,7 @@ public class Main {
         }
     }
 
-    public static Boolean check(String[] array) {
+    public static Boolean checkInput(String[] array) {
         if (!(array.length == 3) || !isInteger(array[2]) || (Integer.parseInt(array[2])) < 0)
             return true;
         return false;
