@@ -1,4 +1,4 @@
-package com.egs.sargsyanarsen.task2;
+package com.egs.arsensargsyan.task2;
 
 public final class Constants {
 
