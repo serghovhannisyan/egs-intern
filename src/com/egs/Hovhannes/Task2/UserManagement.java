@@ -1,10 +1,7 @@
-package EGS.UserManagement;
-
-import EGS.UserManagement.User;
+package egs.UserManagement;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class UserManagement {
