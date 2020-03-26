@@ -1,9 +1,8 @@
-package EGS.SymbolRepeat;
+package egs.SymbolRepeat;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class SymbolRepeat {
 
@@ -97,7 +96,6 @@ public class SymbolRepeat {
                 br.close();
 
             } catch (IOException ex) {
-                System.out.println(ex.getMessage());
                 System.out.println(ex.getStackTrace());
             }
         } else {
