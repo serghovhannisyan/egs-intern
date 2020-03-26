@@ -7,6 +7,6 @@ import java.io.File;
 public class Main {
 
     public static void main(String[] args) {
-        new ReadFromFileIntoArrayList(new File("arsen-sargsyan-resources/fileArrayList")).go();
+        new ReadFromFileIntoArrayList(new File("src/com/egs/sargsyanarsen/task2/filee")).go();
     }
 }
