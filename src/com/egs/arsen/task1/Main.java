@@ -17,8 +17,6 @@ public class Main
         try {
             if (file.exists()) {
                 file.delete();
-
-
             }
             if (!file.exists()) {
 
@@ -30,32 +28,23 @@ public class Main
                 System.out.println(" Write your text and pleas put , between words");
             }
 
-
         } catch (IOException e) {
             e.printStackTrace();
         }
         while (state) {
             String str = scanner.nextLine();
             if (str.equalsIgnoreCase("exit")) {
-
-
                 state = false;
             } else {
                 try {
-
                     String s[] = str.split(",");
                     writeToFile(file, str);
-
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-
         }
         modify(file, fileResult);
-
-
     }
 
     public static void writeToFile(File file, String data) throws IOException {
@@ -72,7 +61,6 @@ public class Main
         BufferedReader reader = new BufferedReader(new FileReader(file));
         BufferedWriter reade = new BufferedWriter(new FileWriter(fileResult));
 
-
         String str;
         String word = "hello";
         int lineNummber = 1;
@@ -84,27 +72,20 @@ public class Main
             reade.write(lineNummber + "=" + i + "\n");
             lineNummber++;
         }
-        reade.flush();
         reader.close();
         reade.close();
-
-
     }
 
 
     static int countOccurences(String str, String word) {
 
         String a[] = str.split(",");
-
-
         int count = 0;
         for (int i = 0; i < a.length; i++) {
 
             if (word.equals(a[i]))
                 count++;
-        }
-
-        return count;
+        }return count;
     }
 
 }
