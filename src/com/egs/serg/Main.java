@@ -1,31 +1,39 @@
 package com.egs.serg;
 
-import com.egs.serg.task4.MyHashMap;
-
 public class Main {
 
-    public static void main(String[] args) {
-        MyHashMap map = new MyHashMap();
+    static volatile int x;
+    volatile boolean flag = true;
 
-        map.put("aaa", 1);
-        map.put("bbb", 2);
-        map.put("ccc", 3);
-        map.put("ddd", 4);
-        map.put("eee", 5);
-        map.put("fff", 6);
-        map.put("sdgsdgsdg", 7);
-        map.put("hhh", 7);
-        map.put("iighjghji", 7);
-        map.put("jsfdjj", 7);
-        map.put("kksdfk", 7);
-        map.put("lgkhhgkghll", 555);
-        map.put("mdsfgmm", 7);
-        map.put("nnn", 7);
-        map.put("ooo", 7);
-        map.put("pppdf", 7);
-        map.put("qqqsgddf", 7);
-        map.put("rrrsdf", 7);
-        map.put("ppp", 7);
+    public static void main(String[] args) throws InterruptedException {
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 10000; i++) {
+                    increment();
+                }
+            }
+        });
 
+        Thread t2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                throw new RuntimeException();
+            }
+        });
+
+        t1.start();
+        t2.start();
+
+        t1.join();
+        t2.join();
+
+        System.out.println(x);
     }
+
+    static synchronized void increment() {
+        x++;
+    }
+
+
 }
