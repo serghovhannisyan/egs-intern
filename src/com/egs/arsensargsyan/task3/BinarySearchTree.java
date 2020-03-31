@@ -16,67 +16,52 @@ public class BinarySearchTree {
             size++;
             return null;
         } else {
-            return put(root, newNode);
-        }
+            Node current = root;
+            while (true) {
+                if (newNode.key > current.key) {
+                    if (current.left != null) {
+                        current = current.left;
+                    } else {
+                        current.left = newNode;
+                        size++;
+                        return null;
+                    }
 
-    }
+                } else if (newNode.key < current.key) {
+                    if (current.right != null) {
+                        current = current.right;
+                    } else {
+                        current.right = newNode;
+                        size++;
+                        return null;
+                    }
 
-    private String put(Node current, Node newNode) {
-        if (newNode.key > current.key) {
-            if (current.left != null) {
-                return put(current.left, newNode);
-            } else {
-                current.left = newNode;
-                size++;
-                return null;
+                } else {
+                    String temp = current.value;
+                    current.value = newNode.value;
+                    return temp;
+                }
             }
-
-        } else if (newNode.key < current.key) {
-            if (current.right != null) {
-                return put(current.right, newNode);
-            } else {
-                current.right = newNode;
-                size++;
-                return null;
-            }
-
-        } else {
-            String temp = current.value;
-            current.value = newNode.value;
-            return temp;
         }
     }
 
     public String get(Integer key) {
-        if (key.equals(root.key)) {
-            return root.value;
-        } else {
-            return get(root, key);
+        Node current = root;
+        while (current != null) {
+            if (key == current.key) {
+                return current.value;
+            }
+            if (key > current.key) {
+                current = current.left;
+            } else {
+                current = current.right;
+            }
         }
 
-    }
-
-    private String get(Node current, Integer key) {
-        if (key > current.key) {
-            if (current.left != null) {
-                return get(current.left, key);
-            } else {
-                return null;
-            }
-        } else if (key < current.key) {
-            if (current.right != null) {
-                return get(current.right, key);
-            } else {
-                return null;
-            }
-        } else {
-            return current.value;
-        }
-
+        return null;
     }
 
     public String remove(Integer key) {
-
         return null;
     }
 
@@ -86,7 +71,6 @@ public class BinarySearchTree {
         private Node left;
         private Node right;
 
-        //Node constructor
         private Node(Integer key, String value) {
             this.key = key;
             this.value = value;
@@ -95,4 +79,3 @@ public class BinarySearchTree {
         }
     }
 }
-
